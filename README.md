@@ -1,24 +1,20 @@
-# [engineering.nike.com/cerberus](engineering.nike.com/cerberus)
+# Cerberus
 
-## Cerberus
+This is the base project for the Cerberus ecosystem. Please check out [engineering.nike.com/cerberus](http://engineering.nike.com/cerberus) for more information.
 
-The source code for [engineering.nike.com/cerberus](engineering.nike.com/cerberus)
+Cerberus is a system for safely storing and managing secrets, targeted to running cloud applications in AWS.
 
-Used to document Cerberus and its related components.
+At Nike, we have a complex environment with many different applications, technology stacks, AWS accounts, and teams. Cerberus was developed in this environment to increase agility and decrease risk by securely managing secrets, like database passwords and API keys, as well as non-sensitive dynamic run-time properties, such as feature flags and logging levels.
 
-### Development
-This GitHub page is a [Jekyll](https://jekyllrb.com/) site.
+## Overview
 
-To run the site locally you will need to get [Jekyll](https://jekyllrb.com/docs/installation/) up and running.
+Here are the major [components, clients and utilities](http://engineering.nike.com/cerberus/components/) of Cerberus, focused on an [AWS infrastructure](http://engineering.nike.com/cerberus/docs/architecture/infrastructure-overview).
 
-You should be able to do that via running `bundle install`, you will need [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Bundler](http://bundler.io/) installed for that.
+* Uses HashiCorp’s [Vault](http://engineering.nike.com/cerberus/docs/architecture/vault) to manage the actual encryption at rest and to provide access controls.
+* Operationalized for AWS including a [CLI](http://engineering.nike.com/cerberus/docs/administration-guide/lifecycle-management-cli), Cloud Formation templates, edge security, and IAM integration.
+* Includes a [Dashboard](http://engineering.nike.com/cerberus/docs/user-guide/dashboard), a self-service Web UI, where teams can manage properties and access control.
+* Provides client libraries (e.g. Java, Node, Ruby) that can be used by Cloud applications (EC2 or Lambda) to retrieve properties at run-time.
 
-If your using Mac OS X and have issues with nokogiri checkout this [Stack Overflow](https://stackoverflow.com/questions/37711814/error-installing-rails-on-os-x-el-capitan/39929160#39929160) answer that I found useful.
+## Read more
 
-Once you have Jekyll installed you can host the site by running the following command `bundle exec jekyll serve -w --config _config.yml,_dev_config.yml`
-
-Enable live reloading by using `bundle exec guard`
-
-### License
-
-See the [LICENSE](https://github.com/Nike-Inc/cerberus/blob/master/LICENSE.md) file.
+Interested? You can read more details about Cerberus at [engineering.nike.com/cerberus](http://engineering.nike.com/cerberus).
